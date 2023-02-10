@@ -1,47 +1,41 @@
-let a: number = 4;
-let b: string = 'testaaaa'
-let c = true; 
-
-let d: string[] = ['1', 'hello', 'my']
-
-let e: any = 3
-e = 'aff'
-
-function testString(a: string): string {
-	return '';
+type Point = {
+	x: number,
+	y: number
 }
 
-function test(a: string): string | number {
-	return '';
+type stringOrNumber = string | number
+
+const c = (point: IPoint) => {
+	const d: I3DPoint = point as I3DPoint
 }
 
-const test2 = (a:  number): number => {
-	return a*2;
+type D3Point = Point & {
+	z: number
 }
 
-d = d.map((x: string) => x.toLowerCase())
-
-function countCoord(coord: { lat: number, long?: number }) {
-	return
+interface IPoint {
+	x: number,
+	y: number
 }
 
-function printIt(id: number | string) {
-	if(typeof id === 'number') {
-		console.log(id.toString())
-	} else if (typeof id === 'string') {
-		id.toUpperCase()
-	}
+interface I3DPoint extends IPoint {
+	z: number
 }
 
-function getSum(a: number | number[]) {
-	if (Array.isArray(a)) {
-		a.map(x => x.toString)
-	}
+function print(coord: Point) {
+
 }
 
-function returnVoid(a: number): void {
-	return
+function print(coord: IPoint) {
+
 }
 
-const x: undefined = undefined
-const z: null = null
+interface ITest {
+	a: number
+}
+
+interface ITest {
+	b: number
+}
+
+const myCanvas = document.getElementById('canvas') as HTMLCanvasElement
