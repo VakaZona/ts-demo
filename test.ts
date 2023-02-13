@@ -1,17 +1,17 @@
-interface Info {
-	desc: string;
-	isActive: boolean;
+let c = 'test';
+let t: 'test' = 'test';
+
+type actionType = 'up' | 'down';
+
+function performAction(action: actionType): -1 | 1 {
+	switch (action) {
+		case 'down':
+			return -1; 
+		case 'up':
+			return 1;
+	}
 }
 
-interface Tag {
-	name: string;
-	value: number;
-}
-
-interface Reply {
-	userId: number;
-	id: number;
-	title: string;
-	info: Info;
-	tags: Tag[];
+interface ComplexAction {
+	s: string;
 }
