@@ -1,41 +1,17 @@
-type Point = {
-	x: number,
-	y: number
+interface Info {
+	desc: string;
+	isActive: boolean;
 }
 
-type stringOrNumber = string | number
-
-const c = (point: IPoint) => {
-	const d: I3DPoint = point as I3DPoint
+interface Tag {
+	name: string;
+	value: number;
 }
 
-type D3Point = Point & {
-	z: number
+interface Reply {
+	userId: number;
+	id: number;
+	title: string;
+	info: Info;
+	tags: Tag[];
 }
-
-interface IPoint {
-	x: number,
-	y: number
-}
-
-interface I3DPoint extends IPoint {
-	z: number
-}
-
-function print(coord: Point) {
-
-}
-
-function print(coord: IPoint) {
-
-}
-
-interface ITest {
-	a: number
-}
-
-interface ITest {
-	b: number
-}
-
-const myCanvas = document.getElementById('canvas') as HTMLCanvasElement
