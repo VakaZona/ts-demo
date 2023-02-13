@@ -1,17 +1,35 @@
-const a: [number, string, number] = [0, "a", 1];
+function logTime<T>(num: T): T {
+  console.log(new Date());
+  return num;
+}
 
-a.push(1);
-a.map((s) => {
-  switch (typeof s) {
-    case "string":
-      return "string";
-    case "number":
-      return "number";
+logTime<string>('test')
+logTime<number>(23)
+
+function logTime2<T>(num: T): T {
+  if (typeof num == 'string') {
+    num.toLowerCase();
   }
-});
+  return num;
+}
 
-const [c, d, f] = a;
+interface MyInterface {
+  transform: <T, F>(a: T) => F
+}
 
-const [c1, ...rest] = a;
+class MyGenClass<T> {
+  value: T;
+}
 
-a[1].charAt;
+const a = new MyGenClass<number>()
+a.value
+
+interface TimeStamp {
+  stamp: number;
+}
+
+function logTimeStamp<T extends TimeStamp>(num: T): T {
+  console.log(num.stamp)
+  return num;
+}
+
